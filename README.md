@@ -1,2 +1,3 @@
 # work1_pagina_de_resestas
-este es el trabajo para practica de html brayan steven garcia castro 
+
+this is the first part of programming III of Brayan Steven Garcia Castro
