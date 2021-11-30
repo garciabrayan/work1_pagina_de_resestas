@@ -1,4 +1,3 @@
-
 console.log("Script loaded!") 
 var form1 = document.getElementById("form-1"); 
 var content = document.getElementById("form-content");
@@ -28,5 +27,6 @@ function example () {
 	return []
 
 }
+
 
 
