@@ -1,6 +1,7 @@
 console.log("Script loaded!") 
 var form1 = document.getElementById("form-1"); 
 var bnt1 = document.getElementById("bnt1"); 
+var part1 = document.getElementById("part1"); 
 var content = document.getElementById("form-content");
 contador=0;
 
@@ -24,7 +25,12 @@ form1.addEventListener("submit", function(event){
 	var array = example()
 });
 
-function 
+function change(){
+	if(contador==0){
+		part1.classlist.add(style="color:#B06105")
+
+	}
+}
 
 bnt1.addEventListener("clik", true);
 
