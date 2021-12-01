@@ -24,6 +24,11 @@ form1.addEventListener("submit", function(event){
 	var array = example()
 });
 
+function 
+
+bnt1.addEventListener("clik", true);
+
+
 
 function example () {
 
