@@ -1,6 +1,8 @@
 console.log("Script loaded!") 
 var form1 = document.getElementById("form-1"); 
+var bnt1 = document.getElementById("bnt1"); 
 var content = document.getElementById("form-content");
+contador=0;
 
 form1.addEventListener("submit", function(event){
 		var name = form1.elements ["userName"].value 
@@ -21,6 +23,7 @@ form1.addEventListener("submit", function(event){
 	content.innerHTML += "<P>Contraseña:"+data.Password +"<P>"; 
 	var array = example()
 });
+
 
 function example () {
 
