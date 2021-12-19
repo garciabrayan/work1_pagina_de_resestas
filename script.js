@@ -12,16 +12,11 @@ form1.addEventListener("submit", function(event){
 	console.log(event); 
 	console.log("submit"); 
 	console.log(data) 
-	content.innerHTML = "<h3>Datos del usuario actual</h3>"; 
+	content.innerHTML = "<h3>Datos de nuestros usuarios </h3>"; 
 	content.innerHTML += "<P>Nombre:"+data.userName +"<P>"; 
 	content.innerHTML += "<P>Apellido:"+data.userLastName +"<P>"; 
-	content.innerHTML += "<P>Email:"+data.email +"<P>"; 
 	content.innerHTML += "<P>Telefono:"+data.number +"<P>"; 
 	content.innerHTML += "<P>Dirección:"+data.Address +"<P>"; 
-	content.innerHTML += "<P>Fecha de nacimiento:"+data.Date +"<P>"; 
-	content.innerHTML += "<P>Altura:"+data.height +"<P>"; 
-	content.innerHTML += "<P>Bio:"+data.bio +"<P>"; 
-	content.innerHTML += "<P>Contraseña:"+data.Password +"<P>"; 
 	var array = example()
 });
 
