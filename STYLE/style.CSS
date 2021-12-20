@@ -1,4 +1,3 @@
-
 .content{
 	column-count:4;
 	column-width: 120px;
@@ -11,6 +10,22 @@
 	padding: 10px;
 	
 }
+
+p{
+	font-style: bolder;
+}
+
+article#part1,#part3,#part5  {
+	border: 2px solid black ;
+	background-color: whitesmoke;
+
+}
+
+article#part2,#part4,#part6 {
+	border: 2px double blue;
+	background-color: white;
+}
+
 
 
 
