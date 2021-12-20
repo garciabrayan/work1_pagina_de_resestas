@@ -1,41 +1,102 @@
-console.log("Script loaded!") 
+console.log("Script loaded!")
+
 var form1 = document.getElementById("form-1"); 
-var bnt1 = document.getElementById("bnt1"); 
-var part1 = document.getElementById("part1"); 
-var content = document.getElementById("form-content");
-contador=0;
+var content = document.getElementById("answer")
 
 form1.addEventListener("submit", function(event){
-		var name = form1.elements ["userName"].value 
-	event.preventDefault(); 
-	const data = Object.fromEntries (new FormData(event.target).entries());  
-	console.log(event); 
-	console.log("submit"); 
-	console.log(data) 
-	content.innerHTML = "<h3>Datos de nuestros usuarios </h3>"; 
-	content.innerHTML += "<P>Nombre:"+data.userName +"<P>"; 
-	content.innerHTML += "<P>Apellido:"+data.userLastName +"<P>"; 
-	content.innerHTML += "<P>Telefono:"+data.number +"<P>"; 
-	content.innerHTML += "<P>Dirección:"+data.Address +"<P>"; 
-	var array = example()
-});
+	event.preventDefault();
+	
+	var nameLocal = document.getElementById("nameUser").value;
+	var lastnameLocal = document.getElementById("lastname").value;
+	var phoneLocal = document.getElementById("number").value;
+	var addressLocal = document.getElementById("Address").value;
 
-function change(){
-	if(contador==0){
-		part1.classlist.add(style="color:#B06105")
+	var list = {
+		nameL : nameLocal,
+		lastnameL : lastnameLocal,
+		phoneL : phoneLocal,
+		addressL : addressLocal
+	}
 
+	if (localStorage.getItem('lists') === null) {
+		var lists = [];
+		//agregar al arreglo
+		lists.push(list);
+		//guardar en el localstorage
+		localStorage.setItem('lists',JSON.stringify(lists));
+	}else{
+		var lists = JSON.parse(localStorage.getItem('lists'));
+		//agregar al arreglo
+		lists.push(list);
+		//guardar en el localstorage
+		localStorage.setItem('lists',JSON.stringify(lists));
+	}
+
+	//resetear campos
+	document.getElementById("form-1").reset();
+		showlist();
+
+}); 
+
+function showlist(){
+	//obtener los datos del local storage
+	var lists = JSON.parse(localStorage.getItem('lists'));
+
+	//guardar en el formulario
+	var results = document.getElementById("answerStorage");
+	var results2 = document.getElementById("table2");
+
+	for (var i = 0; i < lists.length; i++) {
+		var nombre = lists[i].nameL;
+		var apellido = lists[i].lastnameL;
+		var telefono = lists[i].phoneL;
+		var direccion = lists[i].addressL;
+
+		results.innerHTML += "<p>"
+							+ "<b> Nombre: </b>"  + nombre + "<br>" 
+							+ "<b> Apellidos: </b>"  + apellido + "<br>" 
+							+ "<b>Telefono: </b>"  + telefono + "<br>" 
+							+ "<b> Direccion: </b>"  + direccion + "<br>" 
+							+ "</p>";
+
+		results2.innerHTML += "<tbody>" +
+								"<td>" + nombre + "</td>" +
+							  	"<td>" + apellido  + "</td>" +
+							  	"<td>" + telefono + "</td>" +
+								"<td>" + direccion  + "</td>" +
+							  "</tbody>";
 	}
 }
 
-bnt1.addEventListener("clik", true);
+function capture() {
+	function Formulario(name,lastname,phone,address){
+	   	this.name=name;
+	   	this.lastname=lastname;
+	   	this.phone=phone;
+	   	this.address=address;
+	}
 
+	var nameCapture = document.getElementById("nameUser").value;
+	var lastnameCapture = document.getElementById("lastname").value;
+	var phoneCapture = document.getElementById("number").value;
+	var addressCapture = document.getElementById("Address").value;
 
-
-function example () {
-
-	return []
-
+	newForm = new Formulario(nameCapture,lastnameCapture,phoneCapture,addressCapture);
+	console.log(newForm);	
+	add();
 }
 
+var baseDatos=[];
+
+function add(){
+	baseDatos.push(newForm);
+	console.log(baseDatos);
+	document.getElementById("table").innerHTML += "<tbody>" +
+												  "<td>" + newForm.name + "</td>" +
+												  "<td>" + newForm.lastname  + "</td>" +
+												  "<td>" + newForm.phone  + "</td>" +
+												  "<td>" + newForm.address  + "</td>" +
+												  "</tbody>";
+};
 
 
