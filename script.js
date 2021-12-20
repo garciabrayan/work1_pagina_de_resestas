@@ -52,12 +52,7 @@ function showlist(){
 		var telefono = lists[i].phoneL;
 		var direccion = lists[i].addressL;
 
-		results.innerHTML += "<p>"
-							+ "<b> Nombre: </b>"  + nombre + "<br>" 
-							+ "<b> Apellidos: </b>"  + apellido + "<br>" 
-							+ "<b>Telefono: </b>"  + telefono + "<br>" 
-							+ "<b> Direccion: </b>"  + direccion + "<br>" 
-							+ "</p>";
+
 
 		results2.innerHTML += "<tbody>" +
 								"<td>" + nombre + "</td>" +
