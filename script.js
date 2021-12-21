@@ -20,29 +20,23 @@ form1.addEventListener("submit", function(event){
 
 	if (localStorage.getItem('lists') === null) {
 		var lists = [];
-		//agregar al arreglo
 		lists.push(list);
-		//guardar en el localstorage
 		localStorage.setItem('lists',JSON.stringify(lists));
 	}else{
 		var lists = JSON.parse(localStorage.getItem('lists'));
-		//agregar al arreglo
 		lists.push(list);
-		//guardar en el localstorage
 		localStorage.setItem('lists',JSON.stringify(lists));
 	}
 
-	//resetear campos
 	document.getElementById("form-1").reset();
 		showlist();
 
 }); 
 
 function showlist(){
-	//obtener los datos del local storage
 	var lists = JSON.parse(localStorage.getItem('lists'));
 
-	//guardar en el formulario
+
 	var results = document.getElementById("answerStorage");
 	var results2 = document.getElementById("table2");
 
