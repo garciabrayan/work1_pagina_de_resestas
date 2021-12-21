@@ -26,8 +26,8 @@ class Stack{
 }
 const stack = new Stack()
 
-console.log(stack.push('Julian'))
-console.log(stack.push('Juana'))
+console.log(stack.push('brayan'))
+console.log(stack.push('garcia'))
 console.log(stack.pop())
 console.log(stack.print())
 
