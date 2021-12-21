@@ -37,7 +37,7 @@ function showlist(){
 	var lists = JSON.parse(localStorage.getItem('lists'));
 
 
-	var results = document.getElementById("answerStorage");
+	var results = document.getElementById("Storage");
 	var results2 = document.getElementById("table2");
 
 	for (var i = 0; i < lists.length; i++) {
